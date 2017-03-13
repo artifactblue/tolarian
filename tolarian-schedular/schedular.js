@@ -14,12 +14,15 @@ function pushMessage(user, message) {
   request.post({
     "url": "https://api.line.me/v2/bot/message/push",
     "method": "POST",
-    "header": {
+    "headers": {
       'Content-Type': 'application/json',
       'Authorization': "Bearer " + process.env.LINE_TOKEN
     },
     "json": postData
   }, function (err, resp, body) {
+    if (err) {
+      console.log(err)
+    }
     console.log("PushMessage to USER: " + user + ", MESSAGE: " + JSON.stringify(postData))
   })
 }
