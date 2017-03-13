@@ -1,2 +1,2 @@
 # tolarian
-Scheduler notify you BitCoin and EtherCoin price
+Schedular notify you BitCoin and EtherCoin price
