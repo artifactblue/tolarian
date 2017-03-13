@@ -45,30 +45,29 @@ function getEtherCoinPrice () {
 }
 
 module.exports.webhook = (event, context, callback) => {
-  // console.log('event', event.body)
-  var body = event.body
+  var body = JSON.parse(event.body)
   body.events.forEach(function(data) {
     var replyToken = data.replyToken
     var message = data.message.text
     requirePrice().then(function(entity) {
       superagent.post(endpoint)
-              .set('Content-type', 'application/json; charset=UTF-8')
-              .set('Authorization',  'Bearer ' + accessToken)
-              .send({
-                replyToken: replyToken,
-                messages: [
-                  {
-                    type: 'text',
-                    text: "BitCoin Price: " + entity.bitCoinPrice + " USD\r\n"
-                    + "EtherCoin Price: " + entity.etherCoinPrice + " USD",
-                  }
-                ],
-              })
-              .end(function(error){
-                if (error) {
-                  console.log(error);
-                }
-              })
+        .set('Content-type', 'application/json; charset=UTF-8')
+        .set('Authorization',  'Bearer ' + accessToken)
+        .send({
+          replyToken: replyToken,
+          messages: [
+            {
+              type: 'text',
+              text: "BitCoin Price: " + entity.bitCoinPrice + " USD\r\n"
+                  + "EthCoin Price: " + entity.etherCoinPrice + " USD",
+            }
+          ],
+        })
+        .end(function(error){
+          if (error) {
+            console.log(error);
+          }
+        })
     })
   })
 

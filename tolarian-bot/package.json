@@ -3,15 +3,12 @@
   "version": "1.0.0",
   "description": "line-bot",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "line-bot"
   ],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "async": "^2.1.5",
     "asyncawait": "^1.0.6",
     "bluebird": "^3.5.0",
