@@ -4,3 +4,14 @@
 ### 掃描以下 QR Code 立即將中本聰加為你的好夥伴!  
 
 <img src="https://i.imgur.com/LEfICmA.png" alt="LINE"/>
+
+### 技術堆疊
+- AWS Lambda
+- AWS API Gateway
+- AWS RDS
+- AWS CloudWatch
+- Serverless framework
+
+### 資料來源網站
+- EtherScan.io
+- Blockchain.info
